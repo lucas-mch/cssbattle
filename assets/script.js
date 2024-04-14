@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('body', desafiosBody, document.getElementById('desafios-body'));
     function carregarDesafios() {
 
-        fetch('../desafios/')
+        fetch('./assets/desafios/')
             .then(response => response.text())
             .then(text => {
                 var regex = /href="([^"]+\.html)"/g;
