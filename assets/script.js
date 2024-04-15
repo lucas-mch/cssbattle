@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function carregarDesafios() {
 
         var desafios = [
-            { link: `/desafios/13-04-2024.html`, data: `/desafios/13-04-2024` },
-            { link: `/desafios/14-04-2024.html`, data: `/desafios/14-04-2024	` }
+            { link: `cssbattle/desafios/13-04-2024.html`, data: `cssbattle/desafios/13-04-2024` },
+            { link: `cssbattle/desafios/14-04-2024.html`, data: `cssbattle/desafios/14-04-2024	` }
         ];
         mostrarDesafios(desafios);
     }
