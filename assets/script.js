@@ -1,40 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var pageSize = 10; 
-    var currentPage = 1; 
+    var pageSize = 10;
+    var currentPage = 1;
 
     var desafiosTable = document.getElementById('desafios-table');
     var desafiosBody = document.getElementById('desafios-body');
     var pagination = document.getElementById('pagination');
     var iframe = document.getElementById('iframe');
-    console.log('body', desafiosBody, document.getElementById('desafios-body'));
+
     function carregarDesafios() {
 
-        fetch('./desafios/')
-            .then(response => response.text())
-            .then(text => {
-                var regex = /href="([^"]+\.html)"/g;
-                var match;
-                var desafios = [];
-
-       
-                while (match = regex.exec(text)) {
-                    var desafio = {
-                        link: match[1],
-                        data: match[1].replace('.html', '') 
-                    };
-                    desafios.push(desafio);
-                }
-
-  
-                mostrarDesafios(desafios);
-            });
+        var desafios = [
+            { link: `/desafios/13-04-2024.html`, data: `/desafios/13-04-2024` },
+            { link: `/desafios/14-04-2024.html`, data: `/desafios/14-04-2024	` }
+        ];
+        mostrarDesafios(desafios);
     }
 
     function mostrarDesafios(desafios) {
 
         desafiosBody.innerHTML = '';
 
-        
+
         var startIndex = (currentPage - 1) * pageSize;
         var endIndex = Math.min(startIndex + pageSize, desafios.length);
 
@@ -68,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
             var a = document.createElement('a');
             a.href = '#';
             a.textContent = i;
-            a.dataset.page = i; 
+            a.dataset.page = i;
             li.appendChild(a);
             pagination.appendChild(li);
         }
 
-      
+
         pagination.addEventListener('click', function (event) {
             if (event.target.tagName === 'A') {
                 currentPage = parseInt(event.target.dataset.page);
@@ -86,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var target = event.target;
         if (target.tagName === 'A') {
             var src = target.getAttribute('data-src');
-            iframe.src = src; 
+            iframe.src = src;
         }
     });
 
