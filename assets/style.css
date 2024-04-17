@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,8 +65,6 @@ th {
     height: 500px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
-
 #preCode code,
 textarea,
 #lineNumbers,
@@ -76,7 +76,7 @@ textarea,
 }
 
 #divCodeWrapper {
-    height: calc(100vh - 450px);
+    height: calc(100vh - 515px);
     max-height: 600px;
     width: 1350px;
     overflow: hidden;
@@ -132,4 +132,29 @@ textarea {
     height: calc(100% - 50px);
     width: 100px;
     overflow: hidden;
+}
+
+.icon-medium {
+    height: 24px;
+    width: 24px;
+}
+
+.end-footer {
+    margin-right: 3vh;
+}
+
+.footer-content {
+    margin-top: 2vh;
+}
+
+.footer-logo {
+    margin-left: 2vh;
+}
+
+.cv-space {
+    margin-right:0.1vh;
+}
+
+#editor {
+    resize: none;
 }
