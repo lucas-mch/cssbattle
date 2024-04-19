@@ -23,36 +23,42 @@
 </head>
 
 <body>
-    <header></header>
     <div class="visualization-container">
-        <div class="visualization-container-col centered">
-            <table id="desafios-table">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody id="desafios-body"></tbody>
-            </table>
-
-            <ul class="pagination" id="pagination"></ul>
-        </div>
-        <div class="visualization-container-col">
-            <div class="iframe-container centered">
-                <iframe id="iframe" width="400" height="300" frameborder="0" class="centered"></iframe>
+        <div class="cards">
+            <div id="carouselExampleControls" class="carousel slide fill-element" data-bs-ride="carousel">
+                <div class="carousel-inner fill-element">
+                    <div class="carousel-item active fill-element">
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                        <div class="card fill-element"></div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <hr>
-            <div id="divCodeWrapper">
-                <pre><code style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" class="lineNumbers language-html hljs language-xml"></code></pre>
-                <pre><code id="lineNumbers" style="opacity: 0.5;" class="language-html hljs language-xml"></code></pre>
-                <pre id="preCode"><code id="codeBlock" class="language-html hljs language-xml"></code></pre>
-                <textarea id="editor" wrap="soft" spellcheck="false"></textarea>
-            </div>
         </div>
-
     </div>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-bottom">
+
+    <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top border-bottom background">
         <div class="col-md-4 d-flex align-items-center footer-logo" bis_skin_checked="1">
             <a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                 <i class="fa-solid fa-l"></i>
@@ -63,13 +69,19 @@
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li class="ms-3">
-                <a class="text-body-secondary" href="./assets/cv.pdf" download="CV - Lucas Machado de Souza" title="Download CV">
-                    <i class="fa-solid fa-c cv-space"></i><i class="fa-solid fa-v cv-space"></i><i class="fa-solid fa-download cv-space"></i>
+                <a class="text-body-secondary" href="./assets/cv.pdf" download="CV - Lucas Machado de Souza"
+                    title="Download CV">
+                    <i class="fa-solid fa-c cv-space"></i><i class="fa-solid fa-v cv-space"></i><i
+                        class="fa-solid fa-download cv-space"></i>
                 </a>
             </li>
-            <li class="ms-3"><a class="text-body-secondary" href="https://www.github.com/lucas-mch" target="_blank" title="Github"><i class="fa-brands fa-github icon-medium"></i></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/lcsmachaado" title="LinkedIn"><i class="fa-brands fa-linkedin icon-medium"></i></a></li>
-            <li class="ms-3 end-footer"><a class="text-body-secondary" href="https://wa.me/5548998318024" target="_blank" title="Envie uma mensagem"><i class="fa-brands fa-whatsapp icon-medium"></i></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.github.com/lucas-mch" target="_blank"
+                    title="Github"><i class="fa-brands fa-github icon-medium"></i></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/lcsmachaado"
+                    title="LinkedIn"><i class="fa-brands fa-linkedin icon-medium"></i></a></li>
+            <li class="ms-3 end-footer"><a class="text-body-secondary" href="https://wa.me/5548998318024"
+                    target="_blank" title="Envie uma mensagem"><i class="fa-brands fa-whatsapp icon-medium"></i></a>
+            </li>
         </ul>
     </footer>
 

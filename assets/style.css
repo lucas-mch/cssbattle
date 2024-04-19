@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
 
+:root {
+    --light-theme-main:#F8F6F4;
+    --light-theme-important:#E3F4F4;
+    --light-theme-secundary:#D2E9E9;
+    --light-theme-background:#C4DFDF;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -43,20 +50,11 @@ th {
     align-items: center;
 }
 
-.visualization-container {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-}
 
-.visualization-container-col {
-    flex: 1;
-    padding: 10px;
-}
 
 .centered {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -76,7 +74,7 @@ textarea,
 }
 
 #divCodeWrapper {
-    height: calc(100vh - 515px);
+    height: calc(100vh - 550px);
     max-height: 600px;
     width: 1350px;
     overflow: hidden;
@@ -134,6 +132,10 @@ textarea {
     overflow: hidden;
 }
 
+footer {
+    background-color: var(--light-theme-main);
+    height:10vh;
+}
 .icon-medium {
     height: 24px;
     width: 24px;
@@ -157,4 +159,35 @@ textarea {
 
 #editor {
     resize: none;
+}
+
+.visualization-container {
+    background-color: var(--light-theme-main);
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 1vw;
+}
+
+.visualization-container-col {
+    flex: 1;
+    padding: 10px;
+}
+
+.cards {
+    border-radius: 16px;
+    display: block;
+    margin: 5vw auto;
+    width: 66.67vw;
+    height: 30vw;
+    background-color: var(--light-theme-important);
+    box-shadow: rgba(255, 223, 0, 0) 0px 0px 30px 0px, rgba(0, 0, 0, 0.1) 0px 20px 50px 0px, rgba(255, 255, 255, 0.1) 0px 1px 3px 0px inset;
+}
+
+
+.fill-element {
+    width: 100%;
+    height: 100%;
 }
