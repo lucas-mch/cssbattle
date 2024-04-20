@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function getDesafios() {
         var desafios = [];
-        fetch('/desafios')
+        fetch('../src/assets/@files/desafios')
             .then(response => response.text())
             .then(text => {
                 var regex = /href="([^"]+\.html)"/g;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     };
                     desafios.push(desafio);
                 }
-            }).finally(returno => {
+            }).finally(() => {
                 createCarousel(desafios);
             }).catch(err => console.error(err));
         return desafios;
