@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var match;
                 while (match = regex.exec(text)) {
                     var desafio = {
-                        filename: match[1].replace('/desafios/', '').replace('.html', ''),
+                        filename: match[1].replace('/src/assets/%40files/desafios/', '').replace('.html', ''),
                         patch: match[1]
                     };
                     desafios.push(desafio);
@@ -26,13 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 createCarousel(desafios);
             }).catch(err => console.error(err));
         return desafios;
-    }
-
-    function getDesafio(path) {
-        fetch(path)
-            .then(response => response.text()).then(text => {
-                return text;
-            })
     }
 
     async function createCarousel(desafios) {
@@ -62,8 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spanDate.className = "badge text-bg-success date-holder";
         var checkIcon = document.createElement('i');
         checkIcon.className = "fa-solid fa-check";
-        spanDate.appendChild(checkIcon);
-        spanDate.innerHTML = desafio.filename;
+        spanDate.innerHTML = checkIcon.outerHTML + ' ' + desafio.filename;
         var card = document.createElement('div');
         card.className = "card";
         cardContent.appendChild(spanDate);

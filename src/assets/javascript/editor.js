@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function () {
+  
+    console.log('loading editor.js');
+  
+});
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     var pageSize = 10;
 //     var currentPage = 1;
@@ -333,7 +339,3 @@
 //     }
 
 // });
-
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('loading editor.js');
-});
