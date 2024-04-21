@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--light-theme-main);
+    height: 10vh;
+}
+
+.icon-medium {
+    height: 24px;
+    width: 24px;
+}
+
+.end-footer {
+    margin-right: 3vh;
+}
+
+.footer-content {
+    margin-top: 2vh;
+}
+
+.footer-logo {
+    margin-left: 2vh;
+}
+
+.cv-space {
+    margin-right: 0.1vh;
+}
