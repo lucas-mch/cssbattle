@@ -59,9 +59,6 @@ function createCardContent(desafiosObj) {
     desafiosObj.desafios.forEach((desafio, index) => {
         var cardContent = document.createElement('div');
         cardContent.className = "card-content" + desafiosObj.getPosition(index);
-        cardContent.addEventListener("click", function () {
-            console.log('event')
-        });
         panel.appendChild(cardContent);
         fillContent(cardContent, desafio);
     });
@@ -72,7 +69,7 @@ function fillContent(cardContent, desafio) {
     spanDate.className = "badge text-bg-success date-holder";
     var checkIcon = document.createElement('i');
     checkIcon.className = "fa-solid fa-check";
-    spanDate.innerHTML = checkIcon.outerHTML + ' ' + desafio.filename;
+    spanDate.innerHTML = desafio.filename;
     var card = document.createElement('div');
     card.className = "card";
     card.id = desafio.filename + 'card'
@@ -96,6 +93,3 @@ function fillCard(card, desafio) {
     };
     card.appendChild(frame);
 }
-
-
-
