@@ -87,6 +87,13 @@ function fillCard(card, desafio) {
     frame.id = desafio.filename;
     frame.width = 400;
     frame.height = 300;
+    frame.onload = function() {
+        var iframeDoc = frame.contentDocument || frame.contentWindow.document;
+        var style = iframeDoc.createElement('style');
+        style.textContent = 'body { cursor: pointer; }';
+
+        iframeDoc.head.appendChild(style);
+    };
     card.appendChild(frame);
 }
 
