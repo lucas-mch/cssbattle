@@ -1,6 +1,6 @@
 const panel = document.getElementById('panel-body');
 
-const challengesPath = window.location.href === 'http://127.0.0.1:5501/src/index.html' ? './assets/@files/desafios/' : 'cssbattle/assets/@files/desafios/';
+const challengesPath = './assets/@files/desafios/';
 
 const challenges = [
     { filename: `13-04-2024`, name: `13-04-2024.html` },
