@@ -1,10 +1,19 @@
 const panel = document.getElementById('panel-body');
-const challengesPath = './assets/@files/desafios';
+
+const challengesPath = window.location.href === 'http://127.0.0.1:5501/src/index.html' ? './assets/@files/desafios/' : 'cssbattle/assets/@files/desafios/';
+
+const challenges = [
+    { filename: `13-04-2024`, name: `13-04-2024.html` },
+    { filename: `14-04-2024`, name: `14-04-2024.html` },
+    { filename: `16-04-2024`, name: `16-04-2024.html` },
+    { filename: `17-04-2024`, name: `17-04-2024.html` },
+    { filename: `18-04-2024`, name: `18-04-2024.html` },
+];
 
 initialize();
 
 function initialize() {
-    getDesafios();
+    buildPanel();
 }
 
 function openModal(details) {
@@ -19,41 +28,22 @@ function openModal(details) {
     modal.style.display = "block";
 }
 
-async function getDesafios() {
-    var desafios = [];
-    fetch(challengesPath)
-        .then(response => response.text())
-        .then(text => {
-            var regex = /href="([^"]+\.html)"/g;
-            var match;
-            while (match = regex.exec(text)) {
-                var desafio = {
-                    filename: match[1].replace('/src/assets/%40files/desafios/', '').replace('.html', ''),
-                    patch: match[1]
-                };
-                desafios.push(desafio);
-            }
-        }).finally(() => {
-
-            var desafioObj = {
-                desafios: desafios,
-                getPosition: function (index) {
-                    console.log('getPosition', index);
-                    console.log(this.desafios.length);
-                    if (index === 0) {
-                        return ' first'
-                    };
-                    if ((index + 1) === this.desafios.length) { 
-                        return ' last' 
-                    };
-                    return '';
-                }
+async function buildPanel() {
+    var desafioObj = {
+        desafios: challenges,
+        getPosition: function (index) {
+            console.log('getPosition', index);
+            console.log(this.desafios.length);
+            if (index === 0) {
+                return ' first'
             };
-
-            createCardContent(desafioObj);
-
-        }).catch(err => console.error(err));
-    return desafios;
+            if ((index + 1) === this.desafios.length) {
+                return ' last'
+            };
+            return '';
+        }
+    };
+    createCardContent(desafioObj);
 }
 
 function createCardContent(desafiosObj) {
@@ -81,11 +71,11 @@ function fillContent(cardContent, desafio) {
 
 function fillCard(card, desafio) {
     var frame = document.createElement('iframe');
-    frame.src = desafio.patch;
+    frame.src = challengesPath + desafio.name;
     frame.id = desafio.filename;
     frame.width = 400;
     frame.height = 300;
-    frame.onload = function() {
+    frame.onload = function () {
         var iframeDoc = frame.contentDocument || frame.contentWindow.document;
         var style = iframeDoc.createElement('style');
         style.textContent = 'body { cursor: pointer; overflow: hidden; }';
