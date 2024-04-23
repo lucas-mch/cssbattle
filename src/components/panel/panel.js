@@ -1,4 +1,5 @@
 const panel = document.getElementById('panel-body');
+const challengesPath = './assets/@files/desafios';
 
 initialize();
 
@@ -20,7 +21,7 @@ function openModal(details) {
 
 async function getDesafios() {
     var desafios = [];
-    fetch('../src/assets/@files/desafios')
+    fetch(challengesPath)
         .then(response => response.text())
         .then(text => {
             var regex = /href="([^"]+\.html)"/g;
