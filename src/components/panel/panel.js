@@ -8,7 +8,7 @@ const challenges = [
     { filename: `16-04-2024`, name: `16-04-2024.html` },
     { filename: `17-04-2024`, name: `17-04-2024.html` },
     { filename: `18-04-2024`, name: `18-04-2024.html` },
-    { filename: `24-04-2024`, name: `24-04-2024.html` },
+    { filename: `22-04-2024`, name: `22-04-2024.html` },
 ];
 
 initialize();
