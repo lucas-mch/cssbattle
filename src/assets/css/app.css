@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
+:root {
+    --light-theme-main: #F8F6F4;
+    --light-theme-important: #E3F4F4;
+    --light-theme-secundary: #D2E9E9;
+    --light-theme-background: #C4DFDF;
+}
+
+.visualization-container {
+    background-color: gainsboro;
+    width: 100%;
+    height: 82vh;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 1vw;
+}
+
+.visualization-container-col {
+    flex: 1;
+    padding: 10px;
+}
+
+.fill-element {
+    width: 100%;
+    height: 100%;
+}
