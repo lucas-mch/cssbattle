@@ -5,6 +5,7 @@ const challengesPath = './assets/@files/desafios/';
 const challenges = [
     { filename: `13-04-2024`, name: `13-04-2024.html` },
     { filename: `14-04-2024`, name: `14-04-2024.html` },
+    { filename: `15-04-2024`, name: `15-04-2024.html` },
     { filename: `16-04-2024`, name: `16-04-2024.html` },
     { filename: `17-04-2024`, name: `17-04-2024.html` },
     { filename: `18-04-2024`, name: `18-04-2024.html` },
