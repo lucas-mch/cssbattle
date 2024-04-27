@@ -13,6 +13,7 @@ const challenges = [
     { filename: `21-04-2024`, name: `21-04-2024.html` },
     { filename: `22-04-2024`, name: `22-04-2024.html` },
     { filename: `23-04-2024`, name: `23-04-2024.html` },
+    { filename: `24-04-2024`, name: `24-04-2024.html` },
 ];
 
 initialize();
