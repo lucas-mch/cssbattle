@@ -1,5 +1,4 @@
 const panel = document.getElementById('panel-body');
-
 const challengesPath = './assets/@files/desafios/';
 
 const challenges = [
@@ -18,24 +17,10 @@ function initialize() {
     buildPanel();
 }
 
-function openModal(details) {
-    console.log('open modal')
-    var modal = document.getElementById("cardDetails");
-    var modalDetails = document.getElementById("modalDetails");
-
-    modalDetails.innerHTML = "";
-
-    modalDetails.innerHTML = details;
-
-    modal.style.display = "block";
-}
-
 async function buildPanel() {
     var desafioObj = {
         desafios: challenges,
         getPosition: function (index) {
-            console.log('getPosition', index);
-            console.log(this.desafios.length);
             if (index === 0) {
                 return ' first'
             };
@@ -81,8 +66,16 @@ function fillCard(card, desafio) {
         var iframeDoc = frame.contentDocument || frame.contentWindow.document;
         var style = iframeDoc.createElement('style');
         style.textContent = 'body { cursor: pointer; overflow: hidden; }';
-
         iframeDoc.head.appendChild(style);
+        iframeDoc.addEventListener('click', () => {
+            openModalViewCard(this.id);
+        });
+        iframeDoc.addEventListener('keydown',(e) => {
+            console.log('eventListener bro')
+            if(e.key === 'Escape') {
+                closeModalViewCard();
+            }
+        })
     };
     card.appendChild(frame);
 }
