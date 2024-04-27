@@ -1,0 +1,23 @@
+<div class="overlay open-animation" id="modal-view-card">
+
+    <div class="modal-actions">
+        <button onclick="TextEditor.clean()"> Limpar </button>
+        <button onclick="TextEditor.fill()"> Preencher </button>
+        <button onclick="closeModalViewCard()"> Fechar </button>
+    </div>
+
+    <br>
+    <div class="custom-modal-content">
+        <div class="code-editor-placeholder">
+            <html-injector src="./components/codeEditor/codeEditor.html"
+                script-src="./components/codeEditor/codeEditor.js" style-src="./components/codeEditor/codeEditor.css" />
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card-preview">
+            <iframe id="preview" width="400" height="300" frameborder="0" class="centered"></iframe>
+        </div>
+    </div>
+
+</div>
