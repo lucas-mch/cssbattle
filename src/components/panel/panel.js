@@ -8,6 +8,9 @@ const challenges = [
     { filename: `16-04-2024`, name: `16-04-2024.html` },
     { filename: `17-04-2024`, name: `17-04-2024.html` },
     { filename: `18-04-2024`, name: `18-04-2024.html` },
+    { filename: `19-04-2024`, name: `19-04-2024.html` },
+    { filename: `20-04-2024`, name: `20-04-2024.html` },
+    { filename: `21-04-2024`, name: `21-04-2024.html` },
     { filename: `22-04-2024`, name: `22-04-2024.html` },
 ];
 
@@ -70,9 +73,8 @@ function fillCard(card, desafio) {
         iframeDoc.addEventListener('click', () => {
             openModalViewCard(this.id);
         });
-        iframeDoc.addEventListener('keydown',(e) => {
-            console.log('eventListener bro')
-            if(e.key === 'Escape') {
+        iframeDoc.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
                 closeModalViewCard();
             }
         })
