@@ -1,0 +1,48 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.open-animation {
+    transition: opacity 0.5s ease;
+}
+
+.opened {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-modal-content {
+    width: 100%;
+    height: 80%;
+    display:grid;
+    grid-template-columns: 80fr 15fr 450px;
+    gap: 15px;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+.code-editor-placeholder {
+
+}
+
+.card-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-actions {
+    padding-top: 1%;
+}
