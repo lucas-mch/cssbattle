@@ -72,9 +72,8 @@ function fillCard(card, desafio) {
         iframeDoc.addEventListener('click', () => {
             openModalViewCard(this.id);
         });
-        iframeDoc.addEventListener('keydown',(e) => {
-            console.log('eventListener bro')
-            if(e.key === 'Escape') {
+        iframeDoc.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
                 closeModalViewCard();
             }
         })
