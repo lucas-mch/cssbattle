@@ -1,0 +1,157 @@
+<head>
+    <title> Chess Board </title>
+</head>
+
+<div>
+    <div id="board" class="board">
+
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .board {
+        display: grid;
+        grid-template-columns: repeat(8, 100px);
+        /* 8 colunas de 50px cada */
+        grid-template-rows: repeat(8, 100px);
+        /* 8 linhas de 50px cada */
+    }
+
+    .tile {
+        height: 100px;
+        width: 100px;
+        border: solid black 1px;
+    }
+
+    .board-span {
+        color: gainsboro;
+    }
+
+    .br {
+        background-size: 100%;
+        background-image: url('./assets/br.png');
+    }
+
+    .piece {
+        background-size: 100%;
+    }
+
+    /* .dragging {
+        pointer-events: none;
+        /* Desativa a interação do mouse enquanto arrasta */
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const board = document.getElementById("board");
+        var draggedPiece = null;
+        var pieces = ['bb', 'br'];
+
+        var color1 = '#87A922';
+        var color2 = '#F7F6BB';
+
+        function buildBoard() {
+            for (var i = 0; i < 64; i++) {
+                if (i % 8 === 0) {
+                    let firstColor = color1;
+                    let secondaryColor = color2;
+                    color1 = `${secondaryColor}`;
+                    color2 = `${firstColor}`;
+                }
+                var tile = document.createElement('div');
+                if (i % 2 === 0) {
+                    tile.style.backgroundColor = color1;
+                    tile.classList.add('dark');
+                } else {
+                    tile.style.backgroundColor = color2;
+                }
+                tile.classList.add('tile');
+                setPosition(i, tile);
+                setPiece(tile);
+                addTilesEvents(tile);
+                board.appendChild(tile);
+            }
+            addMoreEvents();
+        }
+
+        function setPiece(tile) {
+            if (tile.classList.contains('a8') || tile.classList.contains('h8')) {
+                tile.classList.add('br');
+                tile.classList.add('piece');
+                tile.setAttribute("draggable", "true");
+            }
+        }
+
+        var boardX = 'a';
+        var boardY = 8;
+        function setPosition(i, tile) {
+            if (i > 7 && i % 8 === 0) {
+                boardX = 'a';
+                boardY--;
+            }
+            var span = document.createElement('span');
+            span.innerText = boardX + boardY;
+            span.classList.add('board-span');
+            tile.classList.add(boardX + boardY);
+            tile.appendChild(span);
+            boardX = nextChar(boardX);
+        }
+
+        buildBoard();
+
+        function nextChar(c) {
+            return String.fromCharCode(c.charCodeAt(0) + 1);
+        }
+
+        function addTilesEvents(tile) {
+
+            tile.addEventListener("dragover", function (event) {
+                event.preventDefault();
+            });
+
+            tile.addEventListener("drop", function (event) {
+                event.preventDefault();
+                if (draggedPiece) {
+
+                    var filteredPiece = pieces.find((piece) => {
+                        return draggedPiece.classList.contains(piece);
+                    });
+
+                    var targetTile = pieces.find((piece) => {
+                        return this.classList.contains(piece);
+                    });
+
+                    if (!targetTile) {
+                        this.classList.add(filteredPiece);
+                        draggedPiece.classList.remove(filteredPiece);
+                    }
+
+                }
+            });
+        }
+
+        function addMoreEvents() {
+            document.addEventListener("dragstart", function (event) {
+                event.target = event.target.cloneNode(true);
+                event.target.style.backgroundColor = "";
+                if (event.target.classList.contains("tile")) {
+                    draggedPiece = event.target;
+                }
+            });
+
+            document.addEventListener("dragend", function () {
+                event.target.classList.remove("dragging");
+            });
+        }
+
+    });
+
+</script>
